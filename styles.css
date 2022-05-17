@@ -20,9 +20,22 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
     margin: 0 auto;
     height: var(--header-size);
     width: min(100vw, calc(100vh - (var(--header-size))));
+}
+
+.mode-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#color-picker {
+    box-sizing: border-box;
+    height: 1rem;
+    width: 2.5rem;
 }
 
 #slider-container {
@@ -67,4 +80,8 @@ header button:hover {
     background-color: black;
     opacity: 0;
     user-select: none;
+}
+
+.grid-outline {
+    outline: 1px solid grey;
 }
