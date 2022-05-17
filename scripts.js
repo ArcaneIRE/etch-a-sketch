@@ -4,6 +4,7 @@ function populateGrid(size) {
         alert('The grid only accepts values between 1 and 100!');
         return;
     }
+    grid.innerHTML = '';
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
     for (let i = 0; i < (size * size); i++) {
