@@ -86,6 +86,22 @@ function selectMode(newMode) {
     return;
 }
 
+// Grid Lines
+let gridLines = false;
+const gridLineButton = document.querySelector('#grid-line');
+gridLineButton.addEventListener('click', (e) => {
+    let cells = Array.from(grid.childNodes);
+    if (gridLines) {
+        gridLines = false;
+        gridLineButton.classList.remove('active');
+        cells.forEach(element => element.classList.remove('grid-outline'));
+    } else {
+        gridLines = true;
+        gridLineButton.classList.add('active');
+        cells.forEach(element => element.classList.add('grid-outline'));
+    }
+})
+
 // Slider input
 const sizeSliderLabel = document.querySelector('#slider-label');
 const sizeSlider = document.querySelector('#size-slider');
