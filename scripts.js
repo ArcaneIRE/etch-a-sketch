@@ -46,8 +46,6 @@ function draw (element) {
         case 'eraser':
             element.style.backgroundColor = '#FFFFFF';
     }
-    currentOpacity = parseFloat(getComputedStyle(element).opacity);
-    element.style.opacity =  currentOpacity + 0.25;
 }
 
 // Mode select
