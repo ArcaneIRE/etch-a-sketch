@@ -1,5 +1,6 @@
 const MAX_SIZE = 50;
 
+// Grid
 const grid = document.querySelector('#grid');
 function populateGrid(size) {
     if (size < 1 || size > MAX_SIZE ) {
@@ -19,6 +20,7 @@ function populateGrid(size) {
     return;
 }
 
+// Drawing
 let mouseDown = false;
 document.body.addEventListener('mousedown', () => mouseDown = true);
 document.body.addEventListener('mouseup', () => mouseDown = false);
@@ -43,6 +45,7 @@ sizeSlider.onchange = (e) => {
     populateGrid(e.target.value);
 };
 
+// Initialisation
 window.onload = () => {
     sizeSliderLabel.textContent = `Grid: 16x16`;
     sizeSlider.value = 16;
