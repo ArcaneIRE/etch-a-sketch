@@ -36,7 +36,8 @@ function draw (element) {
             element.style.backgroundColor = color;
             break;
         case 'darken':
-            let newColor = tinycolor(element.style.backgroundColor).darken(20).toString();
+            let newColor = tinycolor(window.getComputedStyle(element).backgroundColor);
+            newColor.darken(20).toString();
             element.style.backgroundColor = newColor;
             break;
         case 'rainbow':
