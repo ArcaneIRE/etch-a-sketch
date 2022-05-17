@@ -50,6 +50,7 @@ header button:hover {
     height: min(100vw, calc(100vh - (var(--header-size))));
     width: min(100vw, calc(100vh - (var(--header-size))));
     background-color: white;
+    user-select: none;
 }
 
 .cell {
@@ -59,4 +60,5 @@ header button:hover {
     transition: all .1s;
     background-color: black;
     opacity: 0;
+    user-select: none;
 }

@@ -19,11 +19,8 @@ function populateGrid(size) {
 }
 
 let mouseDown = false;
-document.body.onmousedown = () => {
-    mouseDown = true
-    return false
-};
-document.body.onmouseup = () => (mouseDown = false);
+document.body.addEventListener('mousedown', () => mouseDown = true);
+document.body.addEventListener('mouseup', () => mouseDown = false);
 
 function draw(element) {
     currentOpacity = parseFloat(getComputedStyle(element).opacity);
