@@ -34,4 +34,7 @@ const sizeButton = document.querySelector('#size-button');
 sizeButton.addEventListener('click', () => {
     populateGrid(parseInt(prompt('Enter a dimension between 1 and 100:')));
 })
-populateGrid(16);
+
+window.onload = () => {
+    populateGrid(16);
+  }
