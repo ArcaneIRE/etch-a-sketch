@@ -16,9 +16,16 @@ function populateGrid(size) {
     return;
 }
 
+let mouseDown = false;
+document.body.onmousedown = () => {
+    mouseDown = true
+    return false
+};
+document.body.onmouseup = () => (mouseDown = false);
+
 function hover(element) {
     currentOpacity = parseFloat(getComputedStyle(element).opacity);
-    if (currentOpacity < 1) {
+    if (currentOpacity < 1 && mouseDown) {
         element.style.opacity =  currentOpacity + 0.25;
     }
 }
