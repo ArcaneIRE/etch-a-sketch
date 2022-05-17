@@ -51,13 +51,17 @@ header button {
     background-color: rgb(68, 68, 255);
     padding: .4rem .7rem;
     font-family: inherit;
-    transition: all .05s;
     cursor: pointer;
     font-weight: 600;
 }
 
 header button:hover {
     background-color: rgb(0, 0, 255);
+}
+
+header > .active {
+    background-color: rgb(0, 0, 255);
+    transform: scale(1.1);
 }
 
 #grid {

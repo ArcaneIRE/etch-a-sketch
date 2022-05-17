@@ -10,10 +10,10 @@
 </head>
 <body>
     <header>
-        <button>Color</button>
-        <button>Greyscale</button>
-        <button>Rainbow</button>
-        <button>Eraser</button>
+        <button id="color-mode">Color</button>
+        <button id="darken-mode">Darken</button>
+        <button id="rainbow-mode">Rainbow</button>
+        <button id="eraser-mode">Eraser</button>
         <div class="color-picker-container">
             <label id="color-label" for="size-slider">Color:</label>
             <input type="color" id="color-picker">
@@ -22,7 +22,7 @@
             <label id="slider-label" for="size-slider"></label>
             <input type="range" id="size-slider" min="1" max="50" value="16">
         </div>
-        <button>Toggle Grid Lines</button>
+        <button>Grid Lines</button>
         </header>
     <div id="grid"></div>
 </body>

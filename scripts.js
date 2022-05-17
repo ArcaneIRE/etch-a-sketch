@@ -35,6 +35,42 @@ function draw (element) {
     element.style.opacity =  currentOpacity + 0.25;
 }
 
+// Mode select
+let mode = 'color';
+const colorModeButton = document.querySelector('#color-mode');
+colorModeButton.addEventListener('click', () => selectMode('color'));
+const darkenModeButton = document.querySelector('#darken-mode');
+darkenModeButton.addEventListener('click', () => selectMode('darken'));
+const rainbowModeButton = document.querySelector('#rainbow-mode');
+rainbowModeButton.addEventListener('click', () => selectMode('rainbow'));
+const eraserModeButton = document.querySelector('#eraser-mode');
+eraserModeButton.addEventListener('click', () => selectMode('eraser'));
+function selectMode(mode) {
+    colorModeButton.classList.remove('active');
+    darkenModeButton.classList.remove('active');
+    rainbowModeButton.classList.remove('active');
+    eraserModeButton.classList.remove('active');
+    switch (mode) {
+        case 'color':
+            colorModeButton.classList.add('active');
+            mode = 'color';
+            break;
+        case 'darken':
+            darkenModeButton.classList.add('active');
+            mode = 'darken';
+            break;
+        case 'rainbow':
+            rainbowModeButton.classList.add('active');
+            mode = 'rainbow';
+            break;
+        case 'eraser':
+            eraserModeButton.classList.add('active' );
+            mode = 'eraser';
+            break;
+    }
+    return;
+}
+
 // Slider input
 const sizeSliderLabel = document.querySelector('#slider-label');
 const sizeSlider = document.querySelector('#size-slider');
@@ -44,6 +80,11 @@ sizeSlider.addEventListener('input', (e) => {
 sizeSlider.onchange = (e) => {
     populateGrid(e.target.value);
 };
+
+// Color input
+let color = '#000000';
+const colorPicker = document.querySelector('#color-picker');
+colorPicker.addEventListener('input', (e) => color = colorPicker.value);
 
 // Initialisation
 window.onload = () => {
