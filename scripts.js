@@ -12,7 +12,8 @@ function populateGrid(size) {
     for (let i = 0; i < (size * size); i++) {
         let cell = document.createElement('div');
         cell.classList.add('cell');
-        cell.addEventListener('mouseover', (event) => draw(event.target))
+        cell.addEventListener('mouseover', (event) => hoverDraw(event.target));
+        cell.addEventListener('mousedown', (event) => draw(event.target));
         grid.appendChild(cell); 
     }
     return;
@@ -22,11 +23,14 @@ let mouseDown = false;
 document.body.addEventListener('mousedown', () => mouseDown = true);
 document.body.addEventListener('mouseup', () => mouseDown = false);
 
-function draw(element) {
-    currentOpacity = parseFloat(getComputedStyle(element).opacity);
+function hoverDraw(element) {
     if (currentOpacity < 1 && mouseDown) {
-        element.style.opacity =  currentOpacity + 0.25;
+        draw(element);
     }
+}
+function draw (element) {
+    currentOpacity = parseFloat(getComputedStyle(element).opacity);
+    element.style.opacity =  currentOpacity + 0.25;
 }
 
 // Slider input
