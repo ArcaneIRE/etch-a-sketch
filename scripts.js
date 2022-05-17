@@ -1,7 +1,9 @@
+const MAX_SIZE = 50;
+
 const grid = document.querySelector('#grid');
 function populateGrid(size) {
-    if (size < 1 || size > 100 ) {
-        alert('The grid only accepts values between 1 and 100!');
+    if (size < 1 || size > MAX_SIZE ) {
+        alert(`The grid only accepts values between 1 and ${MAX_SIZE}!`);
         return;
     }
     grid.innerHTML = '';
