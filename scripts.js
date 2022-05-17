@@ -31,12 +31,27 @@ function hoverDraw(element) {
     }
 }
 function draw (element) {
+    switch (mode) {
+        case 'color':
+            element.style.backgroundColor = color;
+            break;
+        case 'darken':
+            let newColor = tinycolor(element.style.backgroundColor).darken(20).toString();
+            element.style.backgroundColor = newColor;
+            break;
+        case 'rainbow':
+            randomColor = Math.floor(Math.random()*16777215).toString(16);
+            element.style.backgroundColor = '#' + randomColor;
+            break;
+        case 'eraser':
+            element.style.backgroundColor = '#FFFFFF';
+    }
     currentOpacity = parseFloat(getComputedStyle(element).opacity);
     element.style.opacity =  currentOpacity + 0.25;
 }
 
 // Mode select
-let mode = 'color';
+let mode;
 const colorModeButton = document.querySelector('#color-mode');
 colorModeButton.addEventListener('click', () => selectMode('color'));
 const darkenModeButton = document.querySelector('#darken-mode');
@@ -45,12 +60,12 @@ const rainbowModeButton = document.querySelector('#rainbow-mode');
 rainbowModeButton.addEventListener('click', () => selectMode('rainbow'));
 const eraserModeButton = document.querySelector('#eraser-mode');
 eraserModeButton.addEventListener('click', () => selectMode('eraser'));
-function selectMode(mode) {
+function selectMode(newMode) {
     colorModeButton.classList.remove('active');
     darkenModeButton.classList.remove('active');
     rainbowModeButton.classList.remove('active');
     eraserModeButton.classList.remove('active');
-    switch (mode) {
+    switch (newMode) {
         case 'color':
             colorModeButton.classList.add('active');
             mode = 'color';
@@ -88,6 +103,8 @@ colorPicker.addEventListener('input', (e) => color = colorPicker.value);
 
 // Initialisation
 window.onload = () => {
+    selectMode('color');
+    colorPicker.value = '#000000';
     sizeSliderLabel.textContent = `Grid: 16x16`;
     sizeSlider.value = 16;
     populateGrid(16);

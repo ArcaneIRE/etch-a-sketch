@@ -56,11 +56,11 @@ header button {
 }
 
 header button:hover {
-    background-color: rgb(0, 0, 255);
+    background-color: rgb(20, 20, 255);
 }
 
 header > .active {
-    background-color: rgb(0, 0, 255);
+    background-color: rgb(20, 20, 255);
     transform: scale(1.1);
 }
 
@@ -81,11 +81,10 @@ header > .active {
     margin: 0;
     padding: 0;
     transition: all .1s;
-    background-color: black;
-    opacity: 0;
+    background-color: #FFFFFF;
     user-select: none;
 }
 
 .grid-outline {
-    outline: 1px solid grey;
+    outline: solid 1px grey;
 }
