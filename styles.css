@@ -1,0 +1,62 @@
+:root {
+    --header-size: 3rem;
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(209, 201, 189);
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: var(--header-size);
+    width: min(100vw, calc(100vh - (var(--header-size))));
+}
+
+header button {
+    color:white;
+    border: none;
+    border-radius: .3rem;
+    background-color: rgb(68, 68, 255);
+    padding: .4rem .7rem;
+    font-family: inherit;
+    transition: all .05s;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+header button:hover {
+    background-color: rgb(0, 0, 255);
+}
+
+#grid {
+    box-sizing: border-box;
+    display: grid;
+    grid-auto-flow: row;
+    margin: 0 auto;
+    padding: 0;
+    height: min(100vw, calc(100vh - (var(--header-size))));
+    width: min(100vw, calc(100vh - (var(--header-size))));
+    background-color: white;
+}
+
+.cell {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all .1s;
+    background-color: black;
+    opacity: 0;
+}
