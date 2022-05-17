@@ -25,6 +25,12 @@ header {
     width: min(100vw, calc(100vh - (var(--header-size))));
 }
 
+#slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 header button {
     color:white;
     border: none;

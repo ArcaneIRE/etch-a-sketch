@@ -29,11 +29,17 @@ function draw(element) {
     }
 }
 
-const sizeButton = document.querySelector('#size-button');
-sizeButton.addEventListener('click', () => {
-    populateGrid(parseInt(prompt('Enter a dimension between 1 and 100 (default: 16):')));
-})
+// Slider input
+const sizeSlider = document.querySelector('#size-slider');
+const sizeSliderLabel = document.querySelector('#slider-label');
+sizeSlider.oninput = (e) => {
+    sizeSliderLabel.textContent = `Grid: ${e.target.value}x${e.target.value}`;
+};
+sizeSlider.onchange = (e) => {
+    populateGrid(e.target.value);
+};
 
 window.onload = () => {
     populateGrid(16);
-  }
+    sizeSliderLabel.textContent = `Grid: ${16}x${16}`;
+}
