@@ -32,7 +32,7 @@ function hover(element) {
 
 const sizeButton = document.querySelector('#size-button');
 sizeButton.addEventListener('click', () => {
-    populateGrid(parseInt(prompt('Enter a dimension between 1 and 100:')));
+    populateGrid(parseInt(prompt('Enter a dimension between 1 and 100 (default: 16):')));
 })
 
 window.onload = () => {
