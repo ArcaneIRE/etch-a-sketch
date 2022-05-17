@@ -34,16 +34,17 @@ function draw (element) {
 }
 
 // Slider input
-const sizeSlider = document.querySelector('#size-slider');
 const sizeSliderLabel = document.querySelector('#slider-label');
-sizeSlider.oninput = (e) => {
+const sizeSlider = document.querySelector('#size-slider');
+sizeSlider.addEventListener('input', (e) => {
     sizeSliderLabel.textContent = `Grid: ${e.target.value}x${e.target.value}`;
-};
+});
 sizeSlider.onchange = (e) => {
     populateGrid(e.target.value);
 };
 
 window.onload = () => {
+    sizeSliderLabel.textContent = `Grid: 16x16`;
+    sizeSlider.value = 16;
     populateGrid(16);
-    sizeSliderLabel.textContent = `Grid: ${16}x${16}`;
 }
