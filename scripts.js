@@ -24,7 +24,7 @@ document.body.addEventListener('mousedown', () => mouseDown = true);
 document.body.addEventListener('mouseup', () => mouseDown = false);
 
 function hoverDraw(element) {
-    if (currentOpacity < 1 && mouseDown) {
+    if (mouseDown) {
         draw(element);
     }
 }
